@@ -1,5 +1,6 @@
 const ul = document.getElementById("323");
 const container_led = document.getElementById("led");
+let acum = [];
 
 ul.addEventListener("click", (e) => {
   if (e.target.localName == "li") {
@@ -11,27 +12,64 @@ ul.addEventListener("click", (e) => {
         container_led.innerHTML += number;
       }
     } else {
-      aritmetica(number);
+      aritmetica(container_led.innerHTML);
     }
   }
 });
-let acum = [];
 
-function aritmetica(operator) {
-  /* const limit = container_led.innerHTML.length; */
+function test(cuenta) {
+  aux = 0;
+  switch (cuenta[1]) {
+    case "+":
+      aux = parseInt(cuenta[0]) + parseInt(cuenta[2]);
+      break;
+    case "-":
+      aux = parseInt(cuenta[0]) - parseInt(cuenta[2]);
+      break;
+    default:
+      break;
+  }
+  return aux;
+}
+function aritmetica(numbers) {
+  let calculate = FormatingNumbers(numbers);
+
+  let limit = calculate.length - 1;
+  let aux = 0;
+  let resultado = 0;
+
+  let cuenta = calculate.slice(0, 3);
+
+  for (let index = 0; index < limit / 2; index++) {
+    aux += 2;
+
+    resultado = test(cuenta);
+
+    cuenta = calculate.slice(aux, 3 + aux);
+
+    cuenta[0] = resultado;
+  }
+
+  container_led.innerHTML = resultado;
+}
+
+function FormatingNumbers(numbers) {
+  const limit = numbers.length;
   let aux = "";
-  let acumm = 0;
-  const asd = "523+235-532+";
-  const limit = asd.length;
-  for (let index = 0; index < limit; index++) {
-    if (asd[index] === "+" || asd[index] === "-") {
+  let index = 0;
+
+  while (index < limit) {
+    if (numbers[index] == "+" || numbers[index] == "-") {
       acum.push(aux);
-      acum.push(asd[index]);
+      acum.push(numbers[index]);
       aux = "";
     } else {
-      aux += asd[index];
+      aux += numbers[index];
     }
+    if (index == limit - 1) {
+      acum.push(aux);
+    }
+    index++;
   }
-  console.log(acum);
+  return acum;
 }
-aritmetica();
