@@ -1,5 +1,14 @@
+@font-face {
+  font-family: "CalculatorFont";
+  src: url("fonts/Calculator.ttf") format("truetype");
+}
+
 body {
   background: transparent; /* Make it white if you need */
+  background-image: url("./img/895528.webp");
+  backdrop-filter: blur(4px);
+  filter: invert(100%);
+  background-color: rgba(243, 243, 243, 0.2);
   margin: 0;
   height: 100vh;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
@@ -8,22 +17,27 @@ body {
   align-items: center;
   justify-content: center;
   background-color: rgb(177, 60, 60);
+  font-family: "Prata", serif;
+  font-family: "Quicksand", sans-serif;
 }
 
 li {
   list-style: none;
-  background-color: rgb(247, 66, 66);
+  /*   background-color: rgb(247, 66, 66);
+ */
   border: 1px white solid;
-  color: white;
+  background-color: white;
+  color: black;
   height: 40px;
   width: 40px;
-  border-radius: 35%;
-  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.8);
+  border-radius: 45%;
+  box-shadow: 0px 0px 5px 2px rgba(247, 90, 90, 0.8);
   display: flex;
   align-items: center;
   justify-content: center;
   transition: 400ms;
   cursor: pointer;
+  font-weight: 800;
 }
 
 li:hover {
@@ -31,11 +45,65 @@ li:hover {
   transition: 400ms;
 }
 
+.btn_ac,
+.btn_del {
+  background-color: white;
+  border: none;
+  height: 30px;
+  width: 50px;
+  border-radius: 10px;
+}
+
+.logo_brand {
+  color: white;
+  font-size: large;
+  font-weight: 700;
+  letter-spacing: 4px;
+}
+
+.container {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+.container_cientific {
+  border: rgba(231, 222, 222, 0.979) 5px outset;
+  border-bottom: rgba(231, 222, 222, 0.979) 3px outset;
+  box-shadow: 9px 8px 10px 0px rgba(0, 0, 0, 0.896);
+
+  background-color: white;
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 1;
+  bottom: 0;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  transition: 500ms;
+  background-image: radial-gradient(
+      circle at center,
+      rgb(56, 34, 34) 0.25rem,
+      transparent 0
+    ),
+    radial-gradient(circle at center, black 0.24rem, transparent 0);
+  background-size: 0.5rem 0.5rem;
+  background-position: 0 0, 0.65rem 0.65rem;
+  transform: scale(0.85);
+}
+
 .container_number {
+  z-index: 2;
+  position: relative;
+  height: 100%;
+  width: 100%;
   padding: 0px;
   margin: 0px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
   align-items: center;
   justify-items: center;
   border-top: 2px solid black;
@@ -50,6 +118,7 @@ li:hover {
 }
 
 .container_led {
+  font-family: "CalculatorFont", Arial, Helvetica, sans-serif;
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -63,10 +132,11 @@ li:hover {
   background-size: 0.5rem 0.5rem;
   background-position: 0 0, 0.65rem 0.65rem;
   color: green;
-  font-size: 1.8em;
+  font-size: 2.2em;
 }
 
 .calculator {
+  filter: invert(100%);
   border: rgba(231, 222, 222, 0.979) 5px outset;
   height: 600px;
   width: 350px;
@@ -76,4 +146,10 @@ li:hover {
   box-shadow: 9px 8px 10px 0px rgba(0, 0, 0, 0.896);
   gap: 5px;
   background-color: white;
+}
+
+.container_cientifick,
+.cbox1_active {
+  transform: translateX(350px) translateY(5px);
+  transition: 500ms;
 }

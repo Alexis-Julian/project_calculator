@@ -3,13 +3,41 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
     <link rel="stylesheet" href="style.css" />
     <script src="index.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Prata&family=Quicksand:wght@300&display=swap" rel="stylesheet">
   </head>
   <body>
     <div class="calculator">
       <div class="container_led" id="led">0</div>
-      <ul class="container_number" id="323">
+      <section class="container" id="323">
+        <ul class="container_number">
+          <button class="btn_ac">AC</button>
+          <p class="logo_brand">CAZZIO</p>
+          <button class="btn_del">DEL</button>
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+          <li>5</li>
+          <li>6</li>
+          <li>7</li>
+          <li>8</li>
+          <li>9</li>
+          <li>+</li>
+          <li>0</li>
+          <li>-</li>
+          <input type="checkbox" id="cbox1"></input>
+        <!-- <label for="cbox1">Contaduria</label> -->
+        <li>=</li>
+        <input type="checkbox" id="cbox2"></input>
+       <!--  <label for="cbox2">Cientifica</label> -->
+        </ul>
+
+       <div class="container_cientific " id="cientific">
         <li>1</li>
         <li>2</li>
         <li>3</li>
@@ -17,12 +45,8 @@
         <li>5</li>
         <li>6</li>
         <li>7</li>
-        <li>8</li>
-        <li>9</li>
-        <li>+</li>
-        <li>-</li>
-        <li>=</li>
-      </ul>
+       </div>
+      </section>
     </div>
   </body>
 </html>

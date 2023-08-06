@@ -1,5 +1,8 @@
 const ul = document.getElementById("323");
 const container_led = document.getElementById("led");
+const container_cientific = document.getElementById("cientific");
+const cbox1 = document.getElementById("cbox1");
+const cbox2 = document.getElementById("cbox2");
 let acum = [];
 
 ul.addEventListener("click", (e) => {
@@ -31,6 +34,7 @@ function test(cuenta) {
   }
   return aux;
 }
+
 function aritmetica(numbers) {
   let calculate = FormatingNumbers(numbers);
 
@@ -73,3 +77,11 @@ function FormatingNumbers(numbers) {
   }
   return acum;
 }
+
+cbox2.addEventListener("click", (e) => {
+  if (e.target.checked) {
+    container_cientific.classList.add("cbox1_active");
+  } else {
+    container_cientific.classList.remove("cbox1_active");
+  }
+});
